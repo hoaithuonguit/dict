@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EnViModelStoreContainer" CdmEntityContainer="EnViEntities1">
+    <EntitySetMapping Name="ENWORDs">
+      <EntityTypeMapping TypeName="EnViModel.ENWORD">
+        <MappingFragment StoreEntitySet="ENWORD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EnWord1" ColumnName="EnWord" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="EnVi" ColumnName="EnVi" />
+          <ScalarProperty Name="Example" ColumnName="Example" />
+          <ScalarProperty Name="Favote" ColumnName="Favote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="idioms">
+      <EntityTypeMapping TypeName="EnViModel.idiom">
+        <MappingFragment StoreEntitySet="idioms">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EnWord" ColumnName="EnWord" />
+          <ScalarProperty Name="ViWord" ColumnName="ViWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="structure1">
+      <EntityTypeMapping TypeName="EnViModel.structure1">
+        <MappingFragment StoreEntitySet="structure1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EnWord" ColumnName="EnWord" />
+          <ScalarProperty Name="EnVi" ColumnName="EnVi" />
+          <ScalarProperty Name="Example" ColumnName="Example" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Verbs">
+      <EntityTypeMapping TypeName="EnViModel.Verb">
+        <MappingFragment StoreEntitySet="Verbs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="First" ColumnName="First" />
+          <ScalarProperty Name="Second" ColumnName="Second" />
+          <ScalarProperty Name="Thirst" ColumnName="Thirst" />
+          <ScalarProperty Name="Meaning" ColumnName="Meaning" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favorites">
+      <EntityTypeMapping TypeName="EnViModel.Favorite">
+        <MappingFragment StoreEntitySet="Favorite">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EnWord" ColumnName="EnWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

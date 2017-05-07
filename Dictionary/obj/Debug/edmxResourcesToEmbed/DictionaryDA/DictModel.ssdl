@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnViModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ENWORD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="EnWord" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="EnVi" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Example" Type="nchar" MaxLength="1000" />
+    <Property Name="Favote" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\THUONGDH\DESKTOP\TEST\ENVI.MDF.dbo.Favorite' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Favorite">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="EnWord" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="EnWord" Type="nchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="idioms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="EnWord" Type="nchar" MaxLength="500" Nullable="false" />
+    <Property Name="ViWord" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="structure1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="EnWord" Type="nchar" MaxLength="1000" />
+    <Property Name="EnVi" Type="nvarchar(max)" />
+    <Property Name="Example" Type="nchar" MaxLength="1000" />
+    <Property Name="Key" Type="text" />
+  </EntityType>
+  <EntityType Name="Verbs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="First" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Second" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Thirst" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Meaning" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EnViModelStoreContainer">
+    <EntitySet Name="ENWORD" EntityType="Self.ENWORD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="idioms" EntityType="Self.idioms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="structure1" EntityType="Self.structure1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Verbs" EntityType="Self.Verbs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Favorite" EntityType="Self.Favorite" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Favorite].[ID] AS [ID], 
+[Favorite].[EnWord] AS [EnWord]
+FROM [dbo].[Favorite] AS [Favorite]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
